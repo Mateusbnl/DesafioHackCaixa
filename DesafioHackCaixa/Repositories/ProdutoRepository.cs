@@ -9,7 +9,7 @@ using MinhaApi.Models;
 
 namespace MinhaApi.Repositories
 {
-    //Utilizei o Pattern Repository para realizar a consulta ao Banco de Dados, basicamente eh composta por uma task para retornar um produto conforme os parametros especificados pelo cliente
+    //Utilizei o Repository Pattern para realizar a consulta ao Banco de Dados com o Dapper, basicamente eh composta por uma task para retornar um produto conforme os parametros especificados pelo cliente
     public class ProdutoRepository : IProdutoRepository
     {
         private readonly SqlConnection _connection;
@@ -23,6 +23,7 @@ namespace MinhaApi.Repositories
             _memoryCache = cache;
             _disposed = false;
         }
+        //Cache foi habilitado para dar menos hits no banco de dados para obtencao da tabela de produtos
         public async Task<Produto> Get(Proposta proposta)
         {
             var produtos = _memoryCache.GetOrCreate("ProdutosCache", entry => {
@@ -44,6 +45,7 @@ namespace MinhaApi.Repositories
 
             }
 
+            //Funcao similar ao IN BETWEEN do SQL SERVER
             var produto = produtos.SingleOrDefault<Produto>(produto => 
             proposta.Prazo >= produto.NU_MINIMO_MESES && proposta.Prazo <= produto.NU_MAXIMO_MESES
             && proposta.valorDesejado >= produto.VR_MINIMO && proposta.valorDesejado <= produto.VR_MAXIMO

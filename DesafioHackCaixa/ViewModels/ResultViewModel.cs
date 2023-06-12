@@ -2,6 +2,7 @@ namespace MinhaApi.ViewModels
 {
     public class ResultViewModel<T>
     {
+        //Classe utilizada para gerar respostas padronizadas JSON
         public ResultViewModel(T data, List<string> errors)
         {
             Data = data;

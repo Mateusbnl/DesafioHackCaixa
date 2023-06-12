@@ -2,6 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace MinhaApi.Models
 {
+    //Utilizamos o Dapper para mapear os produtos contidos no Banco de Dados, caso seja adicionado um novo campo que seja necess[ario, basta adicionar uma nova propriedade correspondente nessa classe
     [Table("[PRODUTO]")]
     public class Produto : Base
     {

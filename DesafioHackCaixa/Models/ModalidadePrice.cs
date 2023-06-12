@@ -3,6 +3,7 @@ using MinhaApi.Interfaces;
 
 namespace MinhaApi.Models
 {
+    //Classe para o Objeto simulacaoPrice, que ira conter uma listagem de parcelas que foram calculadas utilizando o Price
     public class ModalidadePrice : IModalidade
     {
         public ModalidadePrice(decimal ValorEmprestimo, int PrazoEmprestimo, decimal taxa)

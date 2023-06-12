@@ -3,6 +3,7 @@ using MinhaApi.Interfaces;
 
 namespace MinhaApi.Models
 {
+    //Classe para o Objeto simulacaoSAC, que ira conter uma listagem de parcelas que foram calculadas utilizando o SAC
     public class ModalidadeSAC : IModalidade
     {
         public ModalidadeSAC(decimal ValorEmprestimo, int PrazoEmprestimo, decimal taxa)

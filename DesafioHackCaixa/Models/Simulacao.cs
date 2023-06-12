@@ -4,6 +4,8 @@ namespace MinhaApi.Models
 {
     public class Simulacao : Base
     {
+
+        //Objeto de Simulacao, que ira conter dois tipos de modalidade SAC ou Price, caso seja necessaria adicionar novas modalidades, basta adicionar na lista de IModalidade
         public Simulacao()
         {
 

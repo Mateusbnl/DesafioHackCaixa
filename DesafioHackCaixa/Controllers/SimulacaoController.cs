@@ -51,6 +51,11 @@ namespace MInhaApi.Controllers
                 Console.WriteLine(ex);
                 return StatusCode(500, new ResultViewModel<Simulacao>("EX5E099 - Falha interna no servidor"));
             }
+            finally
+            {
+                //Adicionei para evitar memory leak(testar ainda), pois como o EventHub [e um Singleton, objetos transients talvez n'ao sejam removidos corretamente
+                simulacao.Dispose();
+            }
         }
     }
 }

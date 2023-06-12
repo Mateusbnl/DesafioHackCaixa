@@ -2,6 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace MinhaApi.Models
 {
+    //Classe base herdada pela maioria dos modelos que implementa a Interface Disposable
     public abstract class Base : IDisposable
     {
         [Computed]

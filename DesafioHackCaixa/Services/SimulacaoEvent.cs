@@ -5,6 +5,7 @@ using MinhaApi.Models;
 
 namespace MinhaApi.Services
 {
+    //Servico do EventHUb, como foi adotado a forma Singleton, foi desabilitado o dispose do producerClient
     public class SimulacaoEvent : IDisposable
     {
         public SimulacaoEvent()
@@ -34,6 +35,7 @@ namespace MinhaApi.Services
             }
             finally
             {
+
                 // await producerClient.DisposeAsync();
             }
 
