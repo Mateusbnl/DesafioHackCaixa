@@ -4,7 +4,7 @@ namespace MinhaApi.Models
 {
     public class Simulacao : Base
     {
-        public Simulacao(Proposta proposta, Produto _produto)
+        public Simulacao()
         {
 
             resultadoSimulacao = new List<IModalidade>();
