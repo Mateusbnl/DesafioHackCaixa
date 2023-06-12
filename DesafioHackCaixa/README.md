@@ -8,7 +8,7 @@ Prezados(as),
 
             ------>  1.2 dotnet build
 
-2. Setar as conexões do EventHub e SQL no AppSettings.json
+2. Setar as conexões do EventHub e SQL no AppSettings.json e AppSettings.Development.json
 
 3. Para executar a aplicação, executar via terminal
 
