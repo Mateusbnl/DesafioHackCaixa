@@ -13,7 +13,7 @@ namespace MInhaApi.Controllers
     {
         //Endpoint da API, poderiamos colocar como v1/simulacoes por exemplo
         //O caminho do post, cria uuma Task que ira retornar com respostas padronizadas ao requester, utilizo o ViewModels para validar a proposta enviado
-        [HttpGet("/v1/simulacoes")]
+        [HttpPost("/v1/simulacoes")]
         public async Task<IActionResult> GetAsync(
             [FromBody] EditorCategoryViewModel model,
             [FromServices] ProdutoRepository produtoRepository,

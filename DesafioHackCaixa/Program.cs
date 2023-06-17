@@ -10,12 +10,20 @@ ConfigureMvc(builder);
 
 //Funcao para configurar os servicos do Repositorio, EventHub e Simulacao
 ConfigureServices(builder);
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 //Carrega as configuracoes contidas no appsettings, como as conexoes do EventHub e carrega a classe de Configuracao (Configuration.cs)
 LoadConfiguration(app);
 // Mapeia todos os controllers da aplicação, no nosso caso, somente existe um Controller que é o SimulacaoController que encontra-se na pasta Controllers
 app.MapControllers();
+
+if (app.Environment.IsDevelopment()){
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
 app.Run();
 
 void LoadConfiguration(WebApplication app) {
