@@ -14,3 +14,5 @@ Prezados(as),
 
 
             ------>  1.2 dotnet run
+   
+4. Endpoint: /v1/simulacoes/ (POST)
